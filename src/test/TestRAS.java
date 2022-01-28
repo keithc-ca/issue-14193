@@ -152,7 +152,7 @@ public class TestRAS {
 		if (memory instanceof com.ibm.lang.management.MemoryMXBean) {
 			String mode = ((com.ibm.lang.management.MemoryMXBean) memory).getGCMode();
 
-			System.out.format("Using GC policy '%s'%n", mode);
+			System.out.format("Using GC policy '%s'.%n", mode);
 		}
 	}
 
