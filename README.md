@@ -1,12 +1,6 @@
-This is the basic command line:
-	$java11
-		-Xgcpolicy:$policy
-		-Xdump:none -Xdump:java:events=abort
-		-Xms800M -Xmx800M
-		--add-exports=openj9.dtfj/com.ibm.dtfj.image.j9=test.ras
-		-p $workspace/issue-14193/bin
-		-m test.ras/test.TestRAS
-		data/core.testSystemDumpNullFile.1643155017633.dmp
+A test program for investigating (OpenJ9 issue 14193)[https://github.com/eclipse-openj9/openj9/issues/14193].
+
+See TestRAS.launch for how to run the test program.
 
 The following table summarizes the test behavior with no explicit calls to `Runtime.gc()`:
 

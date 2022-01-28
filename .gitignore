@@ -1,6 +1,6 @@
 /bin/
 /data/
 core.*.dmp
-heap*.phd
+heapdump.*.phd
 javacore.*.txt
 Snap.*.trc

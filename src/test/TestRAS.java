@@ -136,7 +136,7 @@ public class TestRAS {
 				System.out.println("Out of memory.");
 				try {
 					Dump.systemDumpToFile("core.test.dmp");
-					Dump.heapDumpToFile("heap.test.phd");
+					Dump.heapDumpToFile("heapdump.test.phd");
 					Dump.javaDumpToFile("javacore.test.txt");
 				} catch (InvalidDumpOptionException invalid) {
 					invalid.printStackTrace();
