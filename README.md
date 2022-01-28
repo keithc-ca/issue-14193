@@ -1,6 +1,7 @@
-A test program for investigating (OpenJ9 issue 14193)[https://github.com/eclipse-openj9/openj9/issues/14193].
+A test program for investigating [OpenJ9 issue 14193](https://github.com/eclipse-openj9/openj9/issues/14193).
 
 See TestRAS.launch for how to run the test program.
+It assumes you have configured a Java 11 JDK named 'jdk-11-dev'.
 
 The following table summarizes the test behavior with no explicit calls to `Runtime.gc()`:
 
@@ -12,12 +13,4 @@ The following table summarizes the test behavior with no explicit calls to `Runt
 | optthruput  |    > 100          |
 | metronome   |    > 100          |
 
-Inserting 32 calls to Runtime.gc() before each iteration, the test successfully completes 100 iterations.
-
-| GC Policy   | Failure Iteration |
-|-------------|-------------------|
-| gencon      |        ?          |
-| balanced    |        ?          |
-| optavgpause |        ?          |
-| optthruput  |        ?          |
-| metronome   |        ?          |
+Inserting 32 calls to Runtime.gc() before each iteration, the test successfully completes 100 iterations with any GC policy.
