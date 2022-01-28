@@ -1,0 +1,29 @@
+This is the basic command line:
+	$java11
+		-Xgcpolicy:$policy
+		-Xdump:none -Xdump:java:events=abort
+		-Xms800M -Xmx800M
+		--add-exports=openj9.dtfj/com.ibm.dtfj.image.j9=test.ras
+		-p $workspace/issue-14193/bin
+		-m test.ras/test.TestRAS
+		data/core.testSystemDumpNullFile.1643155017633.dmp
+
+The following table summarizes the test behavior with no explicit calls to `Runtime.gc()`:
+
+| GC Policy   | Failure Iteration |
+|-------------|-------------------|
+| gencon      |        5          |
+| balanced    |    > 100          |
+| optavgpause |    > 100          |
+| optthruput  |    > 100          |
+| metronome   |    > 100          |
+
+Inserting 32 calls to Runtime.gc() before each iteration, the test successfully completes 100 iterations.
+
+| GC Policy   | Failure Iteration |
+|-------------|-------------------|
+| gencon      |        ?          |
+| balanced    |        ?          |
+| optavgpause |        ?          |
+| optthruput  |        ?          |
+| metronome   |        ?          |

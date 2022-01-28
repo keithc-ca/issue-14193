@@ -1,0 +1,6 @@
+/bin/
+/data/
+core.*.dmp
+heap*.phd
+javacore.*.txt
+Snap.*.trc
