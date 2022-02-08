@@ -9,10 +9,10 @@
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_ATTR_USE_ARGFILE" value="false"/>
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE" value="true"/>
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_CLASSPATH_ONLY_JAR" value="false"/>
-    <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-11-dev/"/>
+    <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk11-dev/"/>
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="test.TestRAS"/>
     <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="test.ras"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="data/core.testSystemDumpNullFile.1643155017633.dmp"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="issue-14193"/>
-    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xgcpolicy:gencon&#10;-Xverbosegclog&#10;-Xdump:none -Xdump:java:events=abort&#10;-Xms800M -Xmx800M&#10;--add-exports=openj9.dtfj/com.ibm.dtfj.image.j9=test.ras"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xgcpolicy:gencon&#10;-Xverbosegclog&#10;-Xdump:none -Xdump:java:events=abort&#10;-Xms1024M -Xmx1024M&#10;--add-exports=openj9.dtfj/com.ibm.dtfj.image.j9=test.ras"/>
 </launchConfiguration>
