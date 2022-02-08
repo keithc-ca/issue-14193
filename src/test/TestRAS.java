@@ -99,10 +99,13 @@ public class TestRAS {
 	public static void main(String[] args) {
 		boolean error = true;
 		File file = null;
+		boolean dump = false;
 		boolean gc = false;
 
 		for (String arg : args) {
-			if (arg.equals("-gc")) {
+			if (arg.equals("-dump")) {
+				dump = true;
+			} else if (arg.equals("-gc")) {
 				gc = true;
 			} else if (file == null) {
 				file = new File(arg);
@@ -134,12 +137,14 @@ public class TestRAS {
 				System.out.format("  dump type is '%s'.%n", type);
 			} catch (OutOfMemoryError e) {
 				System.out.println("Out of memory.");
-				try {
-					Dump.systemDumpToFile("core.test.dmp");
-					Dump.heapDumpToFile("heapdump.test.phd");
-					Dump.javaDumpToFile("javacore.test.txt");
-				} catch (InvalidDumpOptionException invalid) {
-					invalid.printStackTrace();
+				if (dump) {
+					try {
+						Dump.systemDumpToFile("core.test.dmp");
+						Dump.heapDumpToFile("heapdump.test.phd");
+						Dump.javaDumpToFile("javacore.test.txt");
+					} catch (InvalidDumpOptionException invalid) {
+						invalid.printStackTrace();
+					}
 				}
 				break;
 			}
